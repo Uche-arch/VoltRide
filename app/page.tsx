@@ -1,65 +1,117 @@
-import Image from "next/image";
+import { Feature43 } from "@/components/feature43";
+import { Hero1 } from "@/components/hero1";
+import { BikeCard } from "@/components/bike-card";
+import { Testimonial9 } from "@/components/testimonial9";
+import { Faq1 } from "@/components/faq1";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <>
+      <Hero1></Hero1>
+      <Feature43></Feature43>
+      <div className="py-16 md:py-20 lg:py-24">
+        <div className="mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Section Heading */}
+          {/* <div className="mb-10 text-center">
+          <span className="text-sm font-semibold uppercase tracking-wider text-orange-600">
+            Our Top 3 Picks
+          </span>
+          <h2 className="mt-1 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
+            Tested and Trusted.
+          </h2>
+          <p className="mt-3 text-base text-slate-600 sm:text-lg">
+            Carefully selected for performance, reliability, and everyday
+            riding.
           </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
+        </div> */}
+          <div className="mb-10 text-center">
+            <span className="text-sm font-semibold uppercase tracking-wider text-primary">
+              Our Top Picks
+            </span>
+            <h2 className="mt-1 text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl">
+              Tested and Trusted.
+            </h2>
+            <p className="mt-3 text-base text-muted-foreground sm:text-lg">
+              Carefully selected for performance, reliability, and everyday
+              riding.
+            </p>
+          </div>
+          {/* <div className="flex-col items-center md:flex-row md:justify-center gap-6"> */}
+          {/* <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto"> */}
+          {/* <div className="flex flex-col items-center lg:flex-row lg:justify-center lg:items-stretch gap-6 lg:gap-8"> */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 justify-items-center lg:justify-items-stretch max-w-5xl mx-auto">
+            {/* <BikeCard
+            title="Cargo Plus 750"
+            bestFor="Kids & Groceries"
+            imageSrc="/bike4.jpeg" // replace with your image path
+            tags={["Class 1/2", "28 mph", "Cadence Sensor"]}
+            specs={{
+              range: "60 mi",
+              battery: "800 Wh",
+              topSpeed: "30 km/h",
+            }}
+            features={[
+              "Longtail rack fully ready.",
+              "Dual high-capacity battery option.",
+              "Heavy-duty kickstand included.",
+            ]}
+          />
+          <BikeCard
+            title="Cargo Plus 750"
+            bestFor="Kids & Groceries"
+            imageSrc="/bike2.jpeg" // replace with your image path
+            tags={["Class 1/2", "28 mph", "Cadence Sensor"]}
+            specs={{
+              range: "60 mi",
+              battery: "800 Wh",
+              topSpeed: "30 km/h",
+            }}
+            features={[
+              "Longtail rack fully ready.",
+              "Dual high-capacity battery option.",
+              "Heavy-duty kickstand included.",
+            ]}
+          /> */}
+            {/* CARD 1: CARGO & FAMILY */}
+            <BikeCard
+              title="Cargo Plus 750"
+              bestFor="Family & Heavy Hauling"
+              imageSrc="/bike4.jpeg"
+              tags={["Class 2", "20 mph", "Torque Sensor"]}
+              specs={{
+                range: "60 mi",
+                battery: "800 Wh",
+                topSpeed: "20 mph", // ~32 km/h
+              }}
+              features={[
+                "Reinforced longtail rear rack included.",
+                "Dual-battery compatible for double the range.",
+                "Heavy-duty dual-leg kickstand for easy loading.",
+              ]}
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+            {/* CARD 2: URBAN COMMUTER */}
+            <BikeCard
+              title="Metro Speed 500"
+              bestFor="Daily City Commuting"
+              imageSrc="/bike2.jpeg"
+              tags={["Class 3", "28 mph", "Cadence Sensor"]}
+              specs={{
+                range: "45 mi",
+                battery: "620 Wh",
+                topSpeed: "28 mph", // ~45 km/h
+              }}
+              features={[
+                "Integrated front & rear high-lumen safety lights.",
+                "Puncture-resistant Kevlar city tires.",
+                "Whisper-quiet belt drive for low maintenance.",
+              ]}
+            />
+          </div>
         </div>
-      </main>
-    </div>
+      </div>
+      <Testimonial9></Testimonial9>
+      <Faq1></Faq1>
+    </>
   );
 }
