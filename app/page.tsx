@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     title: "Sleek E-Bikes | High-Performance Electric Motorcycles",
     description:
       "Cut fuel costs completely. High-speed, heavy-duty electric motorcycles built for smooth commuting and commercial deliveries with full warranty support.",
-    url: "https://sleekebikes.com",
+    url: "https://sleekebikes.vercel.app/",
     images: [
       {
         url: "/og-image.png",

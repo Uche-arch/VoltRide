@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     title: "Electric Bike Maintenance & Repair Services | Sleek E-Bikes",
     description:
       "Keep your electric bike running smooth with expert diagnostics, OEM parts, and official warranty servicing.",
-    url: "https://sleekebikes.com/services",
+    url: "https://sleekebikes.vercel.app/services",
   },
   alternates: {
     canonical: "/services",

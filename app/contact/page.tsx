@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     title: "Contact Sleek E-Bikes | Showroom & WhatsApp Support",
     description:
       "Visit our showroom or chat with us on WhatsApp to inquire about prices, schedule a test ride, or book maintenance.",
-    url: "https://sleekebikes.com/contact",
+    url: "https://sleekebikes.vercel.app/contact",
   },
   alternates: {
     canonical: "/contact",

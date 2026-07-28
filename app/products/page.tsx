@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     title: "Electric Bikes & Motorcycles Lineup | Sleek E-Bikes",
     description:
       "Heavy-duty, waterproof electric motorcycles built for daily commuting and deliveries. 100km range, 120km/h speed, and 2-3 hour fast charge.",
-    url: "https://sleekebikes.com/products",
+    url: "https://sleekebikes.vercel.app/products",
   },
   alternates: {
     canonical: "/products",

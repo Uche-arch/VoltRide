@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   authors: [{ name: "Sleek E-Bikes" }],
   creator: "Sleek E-Bikes",
   publisher: "Sleek E-Bikes",
-  metadataBase: new URL("https://sleekebikes.com"), // Replace with actual production domain when live
+  metadataBase: new URL("https://sleekebikes.vercel.app/"), // Replace with actual production domain when live
   alternates: {
     canonical: "/",
   },
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     title: "Sleek E-Bikes | Eco-Friendly Electric Bikes & Fast Repairs",
     description:
       "Cut fuel costs and beat traffic with high-performance electric motorcycles. 100km range, 2-3 hour fast charge, and official 6-month warranty.",
-    url: "https://sleekebikes.com",
+    url: "https://sleekebikes.vercel.app/",
     siteName: "Sleek E-Bikes",
     images: [
       {
