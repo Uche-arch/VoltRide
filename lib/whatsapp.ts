@@ -1,4 +1,4 @@
-const CLIENT_WHATSAPP_NUMBER = "2349131509153"; // Replace with your client's number (international format, no + or spaces)
+const CLIENT_WHATSAPP_NUMBER = "2348148362220"; // Replace with your client's number (international format, no + or spaces)
 
 export interface WhatsAppMessageProps {
   type: "ORDER" | "MODEL_TEST_RIDE" | "GENERAL_VISIT" | "CONTACT_FORM";
