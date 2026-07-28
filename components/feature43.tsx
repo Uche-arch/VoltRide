@@ -44,80 +44,80 @@ type Props = Partial<Feature43Props>;
 
 const defaultProps: Feature43Props = {
   heading: "Engineered for Performance, Built for the Road",
-features: [
-  {
-    icon: <Zap className="size-6" />,
-    title: "Instant Electric Power",
-    description:
-      "High-torque brushless motors deliver smooth, whisper-quiet acceleration the second you hit the pedals.",
-  },
-  {
-    icon: <Sparkles className="size-6" />,
-    title: "Sleek Ergonomic Frame",
-    description:
-      "Lightweight, aircraft-grade aluminum frames engineered for maximum comfort, durability, and modern style.",
-  },
-  {
-    icon: <ShieldCheck className="size-6" />,
-    title: "All-Weather Safety & Control",
-    description:
-      "Precision hydraulic disc brakes and high-lumen integrated LED lights keep you safe in any condition.",
-  },
-  {
-    icon: <Cpu className="size-6" />,
-    title: "Smart Assist Sensing",
-    description:
-      "Intelligent torque sensors measure your pedal input in real time to deliver a natural, effortless assist.",
-  },
-  {
-    icon: <Mountain className="size-6" />,
-    title: "All-Terrain Capability",
-    description:
-      "Puncture-resistant tires and custom front suspension glide over steep hills, city potholes, and rough trails.",
-  },
-  {
-    icon: <BatteryCharging className="size-6" />,
-    title: "Extended-Range Battery",
-    description:
-      "Removable high-capacity lithium cells engineered to take you up to 60+ miles on a single charge.",
-  },
-  {
-    icon: <PackagePlus className="size-7" />,
-    title: "Modular Cargo Ready",
-    description:
-      "Integrated mounting points let you easily attach panniers, rear racks, and child seats for any trip.",
-  },
-  {
-    icon: <Leaf className="size-7" />,
-    title: "Zero-Emission Commuting",
-    description:
-      "Bypass morning traffic, cut your carbon footprint, and eliminate gas costs without breaking a sweat.",
-  },
-  {
-    icon: <Gauge className="size-7" />,
-    title: "Smart Display Console",
-    description:
-      "Monitor your speed, trip range, battery percentage, and assist level at a single high-visibility glance.",
-  },
-  {
-    icon: <Sliders className="size-7" />,
-    title: "Dynamic Ride Modes",
-    description:
-      "Switch on the fly between Eco, Tour, and Sport modes to tune power output to your exact route.",
-  },
-  {
-    icon: <PlugZap className="size-7" />,
-    title: "Fast Portable Charging",
-    description:
-      "Pop out the lightweight battery and fully recharge in under 4 hours using any standard wall outlet.",
-  },
-  {
-    icon: <Award className="size-6" />,
-    title: "Comprehensive Warranty",
-    description:
-      "Ride with absolute confidence knowing your motor, frame, and battery are backed by full factory warranty.",
-  },
-],
+  features: [
+    {
+      icon: <Zap className="size-6" />,
+      title: "Instant Electric Power",
+      description:
+        "High-torque electric motors deliver smooth, instant acceleration up to 120 km/hr without gas or gear shifts.",
+    },
+    {
+      icon: <Sparkles className="size-6" />,
+      title: "Sleek Ergonomic Frame",
+      description:
+        "Heavy-duty frame construction built with crash guards for maximum durability, rider protection, and modern style.",
+    },
+    {
+      icon: <ShieldCheck className="size-6" />,
+      title: "All-Weather Safety & Control",
+      description:
+        "Precision disc brakes, tubeless tires, and bright lighting keep you completely safe and balanced in any condition.",
+    },
+    {
+      icon: <Cpu className="size-6" />,
+      title: "Waterproof Architecture",
+      description:
+        "Fully sealed, water-resistant electrical system allowing you to ride confidently through rain and wet weather.",
+    },
+    {
+      icon: <Mountain className="size-6" />,
+      title: "All-Terrain Capability",
+      description:
+        "Puncture-resistant tubeless tires and heavy-duty suspension glide easily over potholes, rough roads, and daily routes.",
+    },
+    {
+      icon: <BatteryCharging className="size-6" />,
+      title: "Extended-Range Battery",
+      description:
+        "High-capacity power system engineered to cover up to 100 km distance on a single full charge.",
+    },
+    {
+      icon: <PackagePlus className="size-7" />,
+      title: "Heavy-Duty Cargo Ready",
+      description:
+        "Built-in heavy-duty rear rack designed to carry extra cargo for daily deliveries and commercial haulage.",
+    },
+    {
+      icon: <Leaf className="size-7" />,
+      title: "Zero-Emission Commuting",
+      description:
+        "Bypass traffic, eliminate fuel expenses, and enjoy a clean electric ride for all your daily activities.",
+    },
+    {
+      icon: <Gauge className="size-7" />,
+      title: "Smart Display Console",
+      description:
+        "Monitor your speed, distance, and battery status at a glance with the high-visibility digital console.",
+    },
+    {
+      icon: <Sliders className="size-7" />,
+      title: "Permit Ready Ride",
+      description:
+        "Fully compliant with standard government permits, making it easy to ride anywhere across the country.",
+    },
+    {
+      icon: <PlugZap className="size-7" />,
+      title: "Ultra-Fast Charging",
+      description:
+        "Conveniently power up your battery from 0% to 100% in just 2 to 3 hours using standard charging setups.",
+    },
+    {
+      icon: <Award className="size-6" />,
+      title: "6-Month Warranty",
+      description:
+        "Ride with total peace of mind backed by a 6-month warranty covering motor, battery, frame, and electrical defects.",
+    },
+  ],
   buttons: {
     primary: {
       text: "View Products",

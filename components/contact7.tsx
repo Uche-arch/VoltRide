@@ -22,23 +22,25 @@ interface Contact7Props {
 
 const Contact7 = ({
   title = "Contact Us",
-  description = "Have a question or need assistance? Reach out through any of the channels below.",
+  description = "Have questions about our electric bikes, test rides, or warranty services? Reach out through any of the channels below.",
   emailLabel = "Email",
-  emailDescription = "We respond to all emails within 24 hours.",
-  email = "hello@example.com",
-  officeLabel = "Office",
-  officeDescription = "Drop by our office for a chat.",
-  officeAddress = "1 Eagle St, Brisbane, QLD, 4000",
+  emailDescription = "We respond to all inquiries within 24 hours.",
+  email = "nwankerenduuzodinma@gmail.com",
+  officeLabel = "Showroom & Office",
+  officeDescription = "Visit us to view our lineup and take a test ride.",
+  officeAddress = "Hospital Road by East, close to Cherubim and Seraphim Church",
   phoneLabel = "Phone",
-  phoneDescription = "We're available Mon-Fri, 9am-5pm.",
-  phone = "(123) 456-7890",
-  chatLabel = "Live Chat",
-  chatDescription = "Get instant help from our support team.",
-  chatLink = "Start Chat",
+  phoneDescription = "Mon - Sat: 8:00 AM - 6:00 PM",
+  phone = "08148362220",
+  chatLabel = "WhatsApp Support",
+  chatDescription = "Chat with our team directly for instant support.",
+  chatLink = "https://wa.me/2348148362220",
   className,
 }: Contact7Props) => {
   return (
-    <section className={cn("py-16 md:py-20 lg:py-24 flex justify-center", className)}>
+    <section
+      className={cn("py-16 md:py-20 lg:py-24 flex justify-center", className)}
+    >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-6xl">
           <div className="mb-14">
@@ -84,8 +86,13 @@ const Contact7 = ({
               <p className="mb-4 text-sm text-muted-foreground">
                 {chatDescription}
               </p>
-              <a href="#" className="hover:underline">
-                {chatLink}
+              <a
+                href={chatLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:underline"
+              >
+                Start WhatsApp Chat
               </a>
             </div>
           </div>
