@@ -62,7 +62,7 @@ export default function Home() {
             <BikeCard
               title="Sleek Utility Pro"
               bestFor="Deliveries & Heavy Hauling"
-              imageSrc="/bike4.jpeg"
+              imageSrc="/demobike.jpg"
               tags={["Heavy Duty", "120 km/h", "Permit Ready"]}
               specs={{
                 range: "100 km",
@@ -80,7 +80,7 @@ export default function Home() {
             <BikeCard
               title="Sleek City Cruiser"
               bestFor="Daily Activities & Commuting"
-              imageSrc="/bike2.jpeg"
+              imageSrc="/demobike2.jpg"
               tags={["Waterproof", "100 km Range", "6-Mo Warranty"]}
               specs={{
                 range: "100 km",

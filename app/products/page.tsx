@@ -38,7 +38,7 @@ const BIKE_MODELS: BikeModel[] = [
       chargeTime: "2-3 hrs",
       motor: "Electric Motor",
     },
-    images: ["/bike1.jpeg", "/bike3.jpeg", "/bike4.jpeg"],
+    images: ["/allbike.jpg", "/allbike6.jpg","/allbike10.jpg", "/allbike5.jpg" ],
   },
   {
     id: "sleek-city-cruiser",
@@ -52,7 +52,7 @@ const BIKE_MODELS: BikeModel[] = [
       chargeTime: "2-3 hrs",
       motor: "Electric Motor",
     },
-    images: ["/bike2.jpeg", "/bike1.jpeg"],
+    images: ["/allbike8.jpg", "/allbike9.jpg",  "/allbike7.jpg"],
   },
 ];
 
