@@ -1,180 +1,130 @@
+// components/Testimonials.tsx
 "use client";
 
 import { useEffect, useState } from "react";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
-
-import { Avatar, AvatarImage } from "@/components/ui/avatar";
+import { Star, MessageSquarePlus } from "lucide-react";
 import { Card } from "@/components/ui/card";
-import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
+import { LeaveReviewModal } from "@/components/LeaveReviewModal";
 
-interface TestimonialBasicGridItem {
+interface TestimonialItem {
   id?: string;
+  _id?: string;
   name: string;
-  avatar: string;
   content: string;
   role?: string;
-  username?: string;
-  date?: string;
-  link?: string;
-  icon?: string;
+  rating?: number;
 }
 
-interface TestimonialBasicGridProps {
-  heading: string;
-  description: string;
-  testimonials: TestimonialBasicGridItem[];
-  className?: string;
-}
+const defaultTestimonials: TestimonialItem[] = [
+  {
+    name: "Chuka",
+    role: "Daily Rider",
+    rating: 5,
+    content:
+      "omoh boss I really love this bike The fact that it's eletric is so amazing just charge and ride omo it saves me from a lot of stress boss, since I de use am no issues at all Tanks my boss",
+  },
+  {
+    name: "Emeka Okonkwo",
+    role: "Delivery Agent",
+    rating: 5,
+    content:
+      "Abeg no fuel money stress again! The heavy-duty rear rack carry all my delivery market without issues. Battery de last well for full day work, just 2 hours charge and I don ready again.",
+  },
+  {
+    name: "Blessing Adebayo",
+    role: "Business Owner",
+    rating: 5,
+    content:
+      "Switching to an electric motorcycle is the best financial decision I've made this year. I travel up to 100 km on a full charge and charge time takes under 3 hours. Super reliable!",
+  },
+];
 
-interface Testimonial9Props extends TestimonialBasicGridProps {}
-type Props = Partial<Testimonial9Props>;
-
-const defaultProps: Testimonial9Props = {
-  heading: "Loved by Riders Across Nigeria",
-  description:
-    "Real feedback from everyday riders who cut down fuel costs, beat traffic, and made their daily travel effortless.",
-  testimonials: [
-    {
-      id: "1",
-      name: "Chuka",
-      username: "chuka_rides",
-      date: "2026-03-12",
-      role: "Daily Rider",
-      avatar:
-        "https://deifkwefumgah.cloudfront.net/shadcnblocks/image-set/modern/avatars/avatar3.jpg",
-      content:
-        "omoh boss I really love this bike The fact that it's eletric is so amazing just charge and ride omo it saves me from a lot of stress boss, since I de use am no issues at all Tanks my boss",
-      link: "#",
-      icon: "https://deifkwefumgah.cloudfront.net/shadcnblocks/image-set/placeholder/testimonials/social-network-icons/x-icon.svg",
-    },
-    {
-      id: "2",
-      name: "Emeka Okonkwo",
-      username: "emeka_logistics",
-      date: "2026-03-10",
-      role: "Delivery Agent",
-      avatar:
-        "https://deifkwefumgah.cloudfront.net/shadcnblocks/image-set/modern/avatars/avatar7.jpg",
-      content:
-        "Abeg no fuel money stress again! The heavy-duty rear rack carry all my delivery market without issues. Battery de last well for full day work, just 2 hours charge and I don ready again.",
-      link: "#",
-      icon: "https://deifkwefumgah.cloudfront.net/shadcnblocks/image-set/placeholder/testimonials/social-network-icons/linkedin-icon.svg",
-    },
-    {
-      id: "3",
-      name: "Blessing Adebayo",
-      username: "blessing_a",
-      date: "2026-03-08",
-      role: "Business Owner",
-      avatar:
-        "https://deifkwefumgah.cloudfront.net/shadcnblocks/image-set/modern/avatars/avatar12.jpg",
-      content:
-        "Switching to an electric motorcycle is the best financial decision I've made this year. I travel up to 100 km on a full charge and charge time takes under 3 hours. Super reliable!",
-      link: "#",
-      icon: "https://deifkwefumgah.cloudfront.net/shadcnblocks/image-set/placeholder/testimonials/social-network-icons/x-icon.svg",
-    },
-    {
-      id: "4",
-      name: "Tunde Bakare",
-      username: "tunde_b",
-      date: "2026-03-05",
-      role: "City Commuter",
-      avatar:
-        "https://deifkwefumgah.cloudfront.net/shadcnblocks/image-set/modern/avatars/avatar18.jpg",
-      content:
-        "Omo heavy rain beat me yesterday, I think say bike go spoil. Pure lies! The waterproof build is 100% solid, and the tubeless tires balanced nicely on wet roads. Excellent quality.",
-      link: "#",
-      icon: "https://deifkwefumgah.cloudfront.net/shadcnblocks/image-set/placeholder/testimonials/social-network-icons/instagram-icon.svg",
-    },
-    {
-      id: "5",
-      name: "Aisha Ibrahim",
-      username: "aisha_i",
-      date: "2026-03-01",
-      role: "Daily Rider",
-      avatar:
-        "https://deifkwefumgah.cloudfront.net/shadcnblocks/image-set/modern/avatars/avatar22.jpg",
-      content:
-        "The speed is super impressive—easily hits up to 120 km/h on the main road. The crash guards give me that extra confidence, and knowing there's a 6-month warranty brings total peace of mind.",
-      link: "#",
-      icon: "https://deifkwefumgah.cloudfront.net/shadcnblocks/image-set/placeholder/testimonials/social-network-icons/linkedin-icon.svg",
-    },
-    {
-      id: "6",
-      name: "Femi Danjuma",
-      username: "femi_d",
-      date: "2026-02-28",
-      role: "Bike Owner",
-      avatar:
-        "https://deifkwefumgah.cloudfront.net/shadcnblocks/image-set/modern/avatars/avatar25.jpg",
-      content:
-        "Boss man setup de top tier! No engine noise, no exhaust smoke, no constant mechanic runs. You just charge am, ride, and save money every single day. I highly recommend Sleek E-Bikes.",
-      link: "#",
-      icon: "https://deifkwefumgah.cloudfront.net/shadcnblocks/image-set/placeholder/testimonials/social-network-icons/x-icon.svg",
-    },
-  ],
-};
-
-const Testimonial9 = (props: Props) => {
-  const { heading, description, testimonials, className } = {
-    ...defaultProps,
-    ...props,
-  };
-
+export function Testimonial9() {
   const [isMounted, setIsMounted] = useState(false);
+  const [reviews, setReviews] = useState<TestimonialItem[]>(defaultTestimonials);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const fetchApprovedReviews = async () => {
+    try {
+      const res = await fetch("/api/reviews");
+      const data = await res.json();
+      
+      if (data.success && data.data.length > 0) {
+        const fetchedReviews: TestimonialItem[] = data.data;
+        
+        // Combine real reviews with default fallbacks
+        // New DB reviews come first; defaults fill in the remaining slots up to max capacity
+        const combined = [
+          ...fetchedReviews,
+          ...defaultTestimonials.slice(fetchedReviews.length),
+        ];
+
+        setReviews(combined);
+      }
+    } catch (err) {
+      console.error(err);
+    }
+  };
 
   useEffect(() => {
     setIsMounted(true);
+    fetchApprovedReviews();
   }, []);
 
-  const list = testimonials.slice(0, 6);
-
   return (
-    <section
-      className={cn("py-16 md:py-20 lg:py-24 flex justify-center", className)}
-    >
+    <section className="py-16 md:py-20 lg:py-24 flex justify-center bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col items-center gap-6">
-          <h2 className="text-center text-3xl font-semibold lg:text-5xl">
-            {heading}
+          <h2 className="text-center text-3xl font-semibold lg:text-5xl text-foreground">
+            Loved by Riders Across Nigeria
           </h2>
-          <p className="text-muted-foreground lg:text-lg">{description}</p>
+          <p className="text-muted-foreground lg:text-lg max-w-2xl text-center">
+            Real feedback from everyday riders who cut down fuel costs, beat traffic, and made their daily travel effortless.
+          </p>
+          <Button
+            size="lg"
+            onClick={() => setIsModalOpen(true)}
+            className="mt-2 rounded-lg font-bold flex items-center gap-2"
+          >
+            {/* <MessageSquarePlus className="h-5 w-5" /> */}
+            Leave a Review
+          </Button>
         </div>
+
         <div className="mt-14 w-full">
           {isMounted && (
             <ResponsiveMasonry
               columnsCountBreakPoints={{ 350: 1, 768: 2, 1024: 3 }}
             >
-              <Masonry gutter="20px" columnsCount={3}>
-                {list.map((testimonial, idx) => (
-                  <Card key={idx} className="p-5">
-                    <div className="flex justify-between">
-                      <div className="flex gap-4 leading-5">
-                        {/* <Avatar className="size-9 rounded-full ring-1 ring-input">
-                          <AvatarImage
-                            src={testimonial.avatar}
-                            alt={testimonial.name}
-                          />
-                        </Avatar> */}
+              <Masonry gutter="20px">
+                {reviews.map((testimonial, idx) => (
+                  <Card 
+                    key={testimonial._id || idx} 
+                    className="w-full p-5 bg-card border-border shadow-sm flex flex-col justify-between"
+                  >
+                    <div>
+                      <div className="flex justify-between items-start gap-2">
                         <div className="text-sm">
-                          <p className="font-medium">{testimonial.name}</p>
-                          <p className="text-muted-foreground">
-                            {testimonial.role}
+                          <p className="font-medium text-foreground">{testimonial.name}</p>
+                          <p className="text-muted-foreground text-xs">
+                            {testimonial.role || "Rider"}
                           </p>
                         </div>
+                        {/* Star Rating Display */}
+                        <div className="flex gap-0.5 shrink-0">
+                          {[...Array(testimonial.rating || 5)].map((_, i) => (
+                            <Star
+                              key={i}
+                              className="h-4 w-4 fill-amber-400 text-amber-400"
+                            />
+                          ))}
+                        </div>
                       </div>
-                      {/* {testimonial.icon ? (
-                        <a href={testimonial.link ?? "#"}>
-                          <img
-                            alt="Testimonial source"
-                            src={testimonial.icon}
-                            className="size-4 dark:invert"
-                          />
-                        </a>
-                      ) : null} */}
-                    </div>
-                    <div className="mt-2 leading-7 text-muted-foreground">
-                      <q>{testimonial.content}</q>
+                      <div className="mt-3 leading-7 text-muted-foreground">
+                        <q>{testimonial.content}</q>
+                      </div>
                     </div>
                   </Card>
                 ))}
@@ -182,9 +132,13 @@ const Testimonial9 = (props: Props) => {
             </ResponsiveMasonry>
           )}
         </div>
+
+        <LeaveReviewModal
+          open={isModalOpen}
+          onOpenChange={setIsModalOpen}
+          onSuccess={fetchApprovedReviews}
+        />
       </div>
     </section>
   );
-};
-
-export { Testimonial9 };
+}
