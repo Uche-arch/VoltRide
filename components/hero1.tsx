@@ -158,7 +158,6 @@
 
 // export { Hero1 };
 
-
 "use client";
 
 import { useState } from "react";
@@ -252,7 +251,7 @@ const Hero1 = (props: Props) => {
       <section
         className={cn(
           "relative flex justify-center py-20 md:py-24 lg:py-26",
-          className
+          className,
         )}
       >
         {/* Background Slit */}
@@ -278,7 +277,7 @@ const Hero1 = (props: Props) => {
 
               {/* Action Buttons Group */}
               <div className="flex w-full flex-col justify-center gap-3 sm:flex-row sm:flex-wrap lg:justify-start">
-                {/* Primary CTA */}
+                {/* Primary CTA (High Intent Conversion First) */}
                 {buttons?.primary && (
                   <Button
                     size="lg"
@@ -289,21 +288,9 @@ const Hero1 = (props: Props) => {
                   </Button>
                 )}
 
-                {/* Secondary CTA */}
-                {buttons?.secondary && (
-                  <Button
-                    asChild
-                    variant="outline"
-                    size="lg"
-                    className="w-full sm:w-auto"
-                  >
-                    <a href={buttons.secondary.url}>{buttons.secondary.text}</a>
-                  </Button>
-                )}
-
-                {/* Video Showcase Button */}
+                {/* Secondary Engagement Action (Watch Showcase Second) */}
                 <Button
-                  variant="ghost"
+                  variant="outline" // or "ghost"
                   size="lg"
                   onClick={() => setIsVideoOpen(true)}
                   className="w-full sm:w-auto gap-2 text-foreground hover:bg-accent hover:text-accent-foreground"
